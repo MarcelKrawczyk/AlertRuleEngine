@@ -10,14 +10,14 @@ public class AlertRuleEngine {
     }
 
     private static String classify(int value) {
-        if (value % 3 == 0 && value % 5 == 0) {
-            return "LOWADVISORY";
-        } else if (value % 3 == 0) {
-            return "LOW";
-        } else if (value % 5 == 0) {
-            return "ADVISORY";
-        } else {
-            return String.valueOf(value);
+        StringBuilder result = new StringBuilder();
+
+        if (value % 3 == 0){
+            result.append("LOW");
         }
+        if (value % 5 == 0){
+            result.append("ADVISORY");
+        }
+        return !result.isEmpty() ? result.toString() : String.valueOf(value);
     }
 }
