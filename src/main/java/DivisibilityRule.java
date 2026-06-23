@@ -1,4 +1,4 @@
-public class DivisibilityRule {
+public class DivisibilityRule implements AlertRule {
     private final int divisor;
     private final String label;
 

@@ -1,14 +1,14 @@
 import java.util.List;
 
 public class RuleEngine {
-    private final List<DivisibilityRule> rules;
+    private final List<AlertRule> rules;
 
-    public RuleEngine(List<DivisibilityRule> rules) {
+    public RuleEngine(List<AlertRule> rules) {
         this.rules = rules;
     }
     public String process(int value) {
         StringBuilder result = new StringBuilder();
-        for (DivisibilityRule rule : rules) {
+        for (AlertRule rule : rules) {
             result.append(rule.evaluate(value));
         }
         return !result.isEmpty() ? result.toString() : String.valueOf(value);
